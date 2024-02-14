@@ -10,7 +10,7 @@
 #RUN npm run build
 
 # Stage 2: Build the Spring Boot backend
-FROM maven:3.8.4-jdk-11 AS backend-builder
+FROM maven:3.8.5-openjdk-17 AS backend-builder
 
 WORKDIR /app
 
