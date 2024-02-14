@@ -3,10 +3,10 @@ FROM node:14 as frontend-builder
 
 WORKDIR /app
 
-COPY frontend/package.json frontend/package-lock.json ./
+COPY react-frontend/package.json react-frontend/package-lock.json ./
 RUN npm install
 
-COPY frontend ./
+COPY react-frontend ./
 RUN npm run build
 
 # Stage 2: Build the Spring Boot backend
@@ -15,7 +15,7 @@ FROM maven:3.8.4-jdk-11 AS backend-builder
 WORKDIR /app
 
 COPY pom.xml .
-COPY backend/src ./src
+COPY springboot-backend/src ./src
 
 RUN mvn clean package -DskipTests
 
