@@ -20,7 +20,7 @@ COPY springboot-backend/src ./src
 RUN mvn clean package -DskipTests
 
 # Stage 3: Final image with both frontend and backend
-FROM openjdk:11-jre-slim
+FROM openjdk:17.0-jdk
 
 WORKDIR /app
 
