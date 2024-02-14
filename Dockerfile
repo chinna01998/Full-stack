@@ -27,6 +27,20 @@ WORKDIR /app
 COPY --from=backend-builder /app/target/springboot*.jar ./backend.jar
 #COPY --from=frontend-builder /app/build ./src/main/resources/static
 
+#Stage 4 Use the official MySQL image from Docker Hub
+FROM mysql:8.0 AS database
+
+# Set environment variables for MySQL root password and database name
+ENV MYSQL_ROOT_PASSWORD=root_password
+ENV MYSQL_DATABASE=my_database
+
+# Set working directory for MySQL
+WORKDIR /docker-entrypoint-initdb.d
+
+# Copy SQL script to initialize the database
+COPY init.sql .
+
+# Use adoptopenjdk/openjdk17 as the base image for the final image
 EXPOSE 8080
 
 CMD ["java", "-jar", "backend.jar"]
