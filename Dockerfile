@@ -14,7 +14,7 @@ FROM maven:3.8.4-jdk-11 AS backend-builder
 
 WORKDIR /app
 
-COPY pom.xml .
+COPY springboot-backend/pom.xml .
 COPY springboot-backend/src ./src
 
 RUN mvn clean package -DskipTests
