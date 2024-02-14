@@ -24,8 +24,8 @@ FROM openjdk:11-jre-slim
 
 WORKDIR /app
 
-COPY --from=backend-builder /app/target/backend.jar ./
-COPY --from=frontend-builder /app/build ./src/main/resources/static
+COPY --from=backend-builder /app/target/springboot*.jar ./backend.jar
+#COPY --from=frontend-builder /app/build ./src/main/resources/static
 
 EXPOSE 8080
 
