@@ -32,7 +32,7 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
 			<scope>runtime</scope>
-		i	<optional>true</optional>
+		<optional>true</optional>
 		</dependency>
 		<dependency>
 	        	<groupId>mysql</groupId>
