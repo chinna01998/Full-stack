@@ -1,13 +1,13 @@
 # Stage 1: Build the React.js frontend
-FROM node:14 as frontend-builder
+#FROM node:14 as frontend-builder
 
-WORKDIR /app
+#WORKDIR /app
 
-COPY react-frontend/package.json react-frontend/package-lock.json ./
-RUN npm install
+#COPY react-frontend/package.json react-frontend/package-lock.json ./
+#RUN npm install
 
-COPY react-frontend ./
-RUN npm run build
+#COPY react-frontend ./
+#RUN npm run build
 
 # Stage 2: Build the Spring Boot backend
 FROM maven:3.8.4-jdk-11 AS backend-builder
