@@ -4,7 +4,7 @@ services:
     image: myapp:latest
     restart: always
     ports:
-      - "8080:8080"
+      - "8000:8080"
   datbase:
     image: mysql:8.3.0
     environment:

@@ -27,7 +27,7 @@ WORKDIR /app
 COPY --from=backend-builder /app/target/springboot*.jar ./backend.jar
 #COPY --from=frontend-builder /app/build ./src/main/resources/static
 
-EXPOSE 8000
+EXPOSE 8080
 
 CMD ["java", "-jar", "backend.jar"]
 
