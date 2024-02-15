@@ -1,0 +1,12 @@
+# Stage 1: Build the React.js frontend
+FROM node:14 as frontend-builder
+
+WORKDIR /app
+
+COPY react-frontend/package.json react-frontend/package-lock.json ./
+RUN npm install
+
+COPY react-frontend ./
+
+EXPOSE 3000
+CMD ["npm", "run", "build"]
