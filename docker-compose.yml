@@ -8,10 +8,10 @@ services:
   datbase:
     image: mysql:8.3.0
     environment:
-      MYSQL_ROOT_PASSWORD: Password@123
-      MYSQL_DATABASE: DB
-      MYSQL_USER: user
-      MYSQL_PASSWORD: Vishnu/@./1998
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: employee_management_system
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
     restart: always
     ports:
       - "3306:3306"
