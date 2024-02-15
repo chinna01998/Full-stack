@@ -7,6 +7,11 @@ services:
       - "8080:8080"
   datbase:
     image: mysql:8.3.0
+    environment:
+      MYSQL_ROOT_PASSWORD: Password@123
+      MYSQL_DATABASE: DB
+      MYSQL_USER: user
+      MYSQL_PASSWORD: Vishnu/@./1998
     restart: always
     ports:
       - "3306:3306"
